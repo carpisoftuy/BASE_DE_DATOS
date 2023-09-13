@@ -1,5 +1,4 @@
-
-use carpifast;
+use carpisoft;
 create table usuario(
 id_usuario bigint unsigned auto_increment not null,
 username varchar(32) unique not null,
@@ -58,7 +57,7 @@ create table gestiona(
 id bigint unsigned auto_increment not null,
 id_usuario bigint unsigned not null unique,
 fecha_inicio timestamp unique not null,
-id_almacen bigint unsigned not null not null,
+id_almacen bigint unsigned not null,
 primary key (id),
 FOREIGN KEY (id_usuario) REFERENCES almacenero(id),
 FOREIGN KEY (id_almacen) REFERENCES almacen(id)
@@ -121,7 +120,7 @@ FOREIGN KEY (id) REFERENCES ubicacion(id)
 
 create table paquete_entregado(
 id bigint unsigned auto_increment not null,
-fecha_entregado timestamp,
+fecha_entregado timestamp not null,
 primary key (id),
 FOREIGN KEY (id) REFERENCES paquete_para_entregar(id)
 );
@@ -138,7 +137,7 @@ FOREIGN KEY (id_almacen) REFERENCES almacen(id)
 
 create table almacen_contiene_bulto_fin(
 id bigint unsigned auto_increment not null,
-fecha_fin timestamp,
+fecha_fin timestamp not null,
 primary key (id),
 FOREIGN KEY (id) REFERENCES almacen_contiene_bulto(id)
 );
@@ -155,7 +154,7 @@ FOREIGN KEY (id_almacen) REFERENCES almacen(id)
 
 create table almacen_contiene_paquete_fin(
 id bigint unsigned auto_increment not null,
-fecha_fin timestamp,
+fecha_fin timestamp not null,
 primary key (id),
 FOREIGN KEY (id) REFERENCES almacen_contiene_paquete(id)
 );
@@ -172,7 +171,7 @@ FOREIGN KEY (id_bulto) REFERENCES bulto(id)
 
 create table bulto_contiene_fin(
 id bigint unsigned auto_increment not null,
-fecha_fin timestamp,
+fecha_fin timestamp not null,
 primary key (id),
 FOREIGN KEY (id) REFERENCES bulto_contiene(id)
 );
@@ -198,4 +197,55 @@ create table camioneta(
 id bigint unsigned auto_increment not null,
 primary key (id),
 FOREIGN KEY (id) REFERENCES vehiculo(id)
+);
+
+create table maneja(
+id bigint unsigned auto_increment not null,
+id_vehiculo bigint unsigned unique not null,
+id_usuario bigint unsigned unique not null,
+fecha_inicio timestamp unique not null,
+primary key (id),
+FOREIGN KEY (id_vehiculo) REFERENCES vehiculo(id),
+FOREIGN KEY (id_usuario) REFERENCES chofer(id)
+);
+
+create table maneja_fin(
+id bigint unsigned not null,
+fecha_fin timestamp not null,
+primary key (id),
+FOREIGN KEY (id) REFERENCES chofer(id)
+);
+
+create table carga_bulto(
+id bigint unsigned auto_increment not null,
+id_bulto bigint unsigned unique not null,
+fecha_inicio timestamp unique not null,
+id_vehiculo bigint unsigned not null,
+primary key (id),
+FOREIGN KEY (id_bulto) REFERENCES bulto(id),
+FOREIGN KEY (id_vehiculo) REFERENCES camion(id)
+);
+
+create table  carga_bulto_fin(
+id bigint unsigned auto_increment not null,
+fecha_fin timestamp not null,
+primary key (id),
+FOREIGN KEY (id) REFERENCES carga_bulto(id)
+);
+
+create table carga_paquete(
+id bigint unsigned auto_increment not null,
+id_paquete bigint unsigned unique not null,
+fecha_inicio timestamp unique not null,
+id_vehiculo bigint unsigned not null,
+primary key (id),
+FOREIGN KEY (id_paquete) REFERENCES paquete(id),
+FOREIGN KEY (id_vehiculo) REFERENCES camioneta(id)
+);
+
+create table  carga_paquete_fin(
+id bigint unsigned auto_increment not null,
+fecha_fin timestamp not null,
+primary key (id),
+FOREIGN KEY (id) REFERENCES carga_paquete(id)
 );
