@@ -258,3 +258,17 @@ fecha_fin timestamp not null,
 primary key (id),
 FOREIGN KEY (id) REFERENCES carga_paquete(id)
 );
+
+/* Encontrar los paquetes entregados por un chofer específico junto con la información del vehículo utilizado: */
+SELECT u.username, v.matricula, p.*
+FROM usuario AS u
+INNER JOIN chofer AS c ON u.id = c.id
+INNER JOIN maneja AS m ON c.id = m.id_usuario
+INNER JOIN vehiculo AS v ON m.id_vehiculo = v.id
+INNER JOIN carga_paquete AS cp ON v.id = cp.id_vehiculo
+INNER JOIN paquete AS p ON cp.id_paquete = p.id
+INNER JOIN paquete_entregado AS pe ON p.id = pe.id
+WHERE c.id = 1;
+
+/* Obtener todos los paquetes almacenados en un almacén específico junto con la información del usuario que los gestiona:
+σ almacen.id = {ID_ALMACEN} (almacen ⨝ gestiona ⨝ usuario) */
