@@ -237,7 +237,7 @@ FOREIGN KEY (id_vehiculo) REFERENCES camion(id)
 );
 
 create table  carga_bulto_fin(
-id bigint unsigned auto_increment not null,
+id bigint unsigned not null,
 fecha_fin timestamp not null,
 primary key (id),
 FOREIGN KEY (id) REFERENCES carga_bulto(id)
@@ -245,16 +245,17 @@ FOREIGN KEY (id) REFERENCES carga_bulto(id)
 
 create table carga_paquete(
 id bigint unsigned auto_increment not null,
-id_paquete bigint unsigned unique not null,
-fecha_inicio timestamp unique not null,
+id_paquete bigint unsigned not null,
+fecha_inicio timestamp not null,
 id_vehiculo bigint unsigned not null,
 primary key (id),
+UNIQUE(id_paquete, fecha_inicio),
 FOREIGN KEY (id_paquete) REFERENCES paquete(id),
 FOREIGN KEY (id_vehiculo) REFERENCES camioneta(id)
 );
 
 create table  carga_paquete_fin(
-id bigint unsigned auto_increment not null,
+id bigint unsigned not null,
 fecha_fin timestamp not null,
 primary key (id),
 FOREIGN KEY (id) REFERENCES carga_paquete(id)
