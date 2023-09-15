@@ -1,6 +1,4 @@
--- las PK son todas simples porque laravel lo requiere
--- en los casos en los que la PK no era simple se agregó una id y la PK antigua se convirtió en una clave única
-
+create schema carpisoft;
 use carpisoft;
 create table usuario(
 id bigint unsigned auto_increment not null,
@@ -185,7 +183,7 @@ FOREIGN KEY (id) REFERENCES bulto_contiene(id)
 
 create table vehiculo(
 id bigint unsigned auto_increment not null,
-codigo_postal varchar(3) not null,
+codigo_pais varchar(3) not null,
 matricula varchar(16) not null,
 capacidad_volumen int not null,
 capacidad_peso int not null,
@@ -213,7 +211,7 @@ id_vehiculo bigint unsigned not null,
 id_usuario bigint unsigned not null,
 fecha_inicio timestamp not null,
 primary key (id),
-UNIQUE(id_vehiculo, fecha_inicio)
+UNIQUE(id_vehiculo, fecha_inicio),
 FOREIGN KEY (id_vehiculo) REFERENCES vehiculo(id),
 FOREIGN KEY (id_usuario) REFERENCES chofer(id)
 );
