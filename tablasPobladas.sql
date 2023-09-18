@@ -1,19 +1,19 @@
 ##poblando tablas##
 
-/*INSERT INTO usuario (id, username, password, nombre, apellido)
+INSERT INTO usuario (username, password, nombre, apellido)
 VALUES
-  (1, 'sosam', '1234567', 'Martín', 'Sosa'),
-  (2, 'manu', '123567', 'Manuel', 'Rodriguez'),
-  (3, 'dino', 'eldino', 'Sandino', 'López'),
-  (4, 'leborges', 'flash123', 'Bruno', 'Borges');
-select * from usuario
+  ('sosam', '1234567', 'Martín', 'Sosa'),
+  ('manu', '123567', 'Manuel', 'Rodriguez'),
+  ('dino', 'eldino', 'Sandino', 'López'),
+  ('leborges', 'flash123', 'Bruno', 'Borges');
+select * from usuario;
 
-INSERT INTO informacion (id, id_usuario, tipo, detalle)
+INSERT INTO informacion (id_usuario, tipo, detalle)
 VALUES
-	(1,1, 'email', 'sosam1763@gmail.com'),
-    (2,2, 'telefono', '2230056'),
-    (3,3, 'email', 'uri.sandi.maxi@gmail.com'),
-    (4,4, 'telefono', '2335345');
+	(1, 'email', 'sosam1763@gmail.com'),
+    (2, 'telefono', '2230056'),
+    (3, 'email', 'uri.sandi.maxi@gmail.com'),
+    (4, 'telefono', '2335345');
 select * from informacion;
 
 INSERT INTO administrador (id)
@@ -32,22 +32,22 @@ VALUES
 	(4);
 select * from almacenero;
 
-INSERT INTO ubicacion (id, direccion, codigo_postal, latitud, longitud)
+INSERT INTO ubicacion (direccion, codigo_postal, latitud, longitud)
 VALUES
-	(1, 'vilardebo 2027', '11800', -34.87958215828094, -56.17532811264501),
-	(2, 'Ellauri 567', '11000', -34.92091607877739, -56.15718447790933),
-	(3, 'Pablo de maria 1834', '11000', -34.90728446683202, -56.17073820118684),
+	('vilardebo 2027', '11800', -34.87958215828094, -56.17532811264501),
+	('Ellauri 567', '11000', -34.92091607877739, -56.15718447790933),
+	('Pablo de maria 1834', '11000', -34.90728446683202, -56.17073820118684),
     ('cufre 4353', 11800, -34.871650126206546, -56.162311988331574),
     ('av italia 2311', 1100, -34.864079790203526, -56.172568755213554),
     ('bv artigas 5532', 1100, -34.857565222318385, -56.180422262909794);
 select * from ubicacion;
 
 
-INSERT INTO almacen (id, espacio, espacio_ocupado, id_ubicacion)
+INSERT INTO almacen (espacio, espacio_ocupado, id_ubicacion)
 VALUES
-	(1, 10000, 7000, 1),
-    (2, 5000, 2500, 2),
-	(3, 10000, 6500, 3);
+	(10000, 7000, 1),
+    (5000, 2500, 2),
+	(10000, 6500, 3);
 
 select * from almacen;
 
@@ -64,11 +64,11 @@ select * from gestiona;
 
 INSERT INTO gestiona_fin (id, fecha_fin)
 VALUES
-  (11, '2023-04-16 10:20:00'),
-  (12, '2023-05-21 14:10:00'),
-  (13, '2023-06-11 09:35:00'),
-  (14, '2023-07-06 17:00:00'),
-  (15, '2023-08-13 11:40:00');
+  (1, '2023-04-16 10:20:00'),
+  (2, '2023-05-21 14:10:00'),
+  (3, '2023-06-11 09:35:00'),
+  (4, '2023-07-06 17:00:00'),
+  (5, '2023-08-13 11:40:00');
   
 select * from gestiona_fin;
 
@@ -243,5 +243,3 @@ VALUES
 select * from carga_paquete_fin;
 
 ###fin poblado de tablas###
-
-*/
