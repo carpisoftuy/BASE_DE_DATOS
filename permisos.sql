@@ -21,10 +21,11 @@ GRANT select, update, insert ON paquete_recogido TO 'chofer'@'%';
 GRANT select, insert ON ubicacion TO 'chofer'@'%';
 GRANT select ON maneja TO 'chofer'@'%';
 GRANT select ON maneja_fin TO 'chofer'@'%';
-GRANT select, update, insert ON carga_bulto TO 'chofer'@'%';
-GRANT select, update, insert ON carga_bulto_fin TO 'chofer'@'%';
-GRANT select, update, insert ON carga_paquete TO 'chofer'@'%';
-GRANT select, update, insert ON carga_paquete_fin TO 'chofer'@'%';
+GRANT select ON usuario TO 'chofer'@'%';
+GRANT select ON carga_bulto TO 'chofer'@'%';
+GRANT select ON carga_bulto_fin TO 'chofer'@'%';
+GRANT select ON carga_paquete TO 'chofer'@'%';
+GRANT select ON carga_paquete_fin TO 'chofer'@'%';
 
 ###Privilegios almacenero###
 GRANT select ON vehiculo TO 'almacenero'@'%';
@@ -45,3 +46,8 @@ GRANT select, update, insert ON gestiona_fin TO 'almacenero'@'%';
 GRANT select, update, insert ON paquete_para_entregar TO 'almacenero'@'%';
 GRANT select, update, insert ON paquete_para_recoger TO 'almacenero'@'%';
 GRANT select, update, insert ON paquete_recogido TO 'almacenero'@'%';
+GRANT select ON usuario TO 'almacenero'@'%';
+GRANT select, update, insert ON carga_bulto TO 'almacenero'@'%';
+GRANT select, update, insert ON carga_bulto_fin TO 'almacenero'@'%';
+GRANT select, update, insert ON carga_paquete TO 'almacenero'@'%';
+GRANT select, update, insert ON carga_paquete_fin TO 'almacenero'@'%';
