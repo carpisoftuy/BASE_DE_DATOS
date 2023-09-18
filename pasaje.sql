@@ -1,4 +1,4 @@
-create schema carpisoft;
+create database carpisoft;
 use carpisoft;
 
 create table usuario(
