@@ -1,0 +1,31 @@
+###commit rollback###
+
+START TRANSACTION;
+INSERT INTO bulto (fecha_armado, volumen, peso, almacen_destino) VALUES (NOW(), 100, 50, 1);
+##Actualizar el espacio ocupado en el almacén
+UPDATE almacen SET espacio_ocupado = espacio_ocupado + 100 WHERE id = 1;
+##Registrar la relación en almacen_contiene_bulto
+INSERT INTO almacen_contiene_bulto (id_bulto, fecha_inicio, id_almacen) VALUES (LAST_INSERT_ID(), NOW(), 1);
+COMMIT;
+
+ROLLBACK;
+
+
+select * from bulto;
+select * from almacen;
+
+
+START TRANSACTION;
+INSERT INTO almacen (espacio, espacio_ocupado, id_ubicacion) VALUES (1000, 0, 1);
+
+##Obtener el ID del almacén recién creado
+SET @id_almacen = LAST_INSERT_ID();
+
+##Asignar un almacenero al almacén
+INSERT INTO gestiona (id_usuario, fecha_inicio, id_almacen) VALUES (3, NOW(), @id_almacen);
+COMMIT;
+ROLLBACK;
+
+select * from almacen;
+select * from gestiona;
+select * from almacenero;
