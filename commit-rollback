@@ -29,3 +29,6 @@ ROLLBACK;
 select * from almacen;
 select * from gestiona;
 select * from almacenero;
+
+/* Obtener todos los paquetes almacenados en un almacén específico junto con la información del usuario que los gestiona:
+σ almacen.id = {ID_ALMACEN} (almacen ⨝ gestiona ⨝ usuario) */
