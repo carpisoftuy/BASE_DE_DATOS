@@ -1,7 +1,7 @@
 drop database ejemplo;
 create database ejemplo;
 use ejemplo;
-
+/* las ID son porque laravel pide que sean asi*/
 create table usuario(
 id bigint unsigned auto_increment not null,
 username varchar(32) not null,
