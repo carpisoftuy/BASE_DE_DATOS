@@ -204,14 +204,20 @@ INSERT INTO maneja (id_vehiculo, id_usuario, fecha_inicio)
 VALUES
 	(1,2, '2023-09-17 12:30:00'),
     	(2,2, '2023-09-18 12:30:00'),
-	(2,2, '2023-09-19 16:30:00');
+	(3,2, '2023-09-18 12:30:00'),
+	(4,2, '2023-09-18 12:30:00'),
+	(5,2, '2023-09-18 12:30:00'),
+	(6,2, '2023-09-19 16:30:00');
 select * from maneja;
 
 INSERT INTO maneja_fin(id, fecha_fin)
 VALUES
-	(1, '2023-09-17 14:30:00'),
+	(1, '2023-09-17 13:30:00'),
     	(2, '2023-09-18 13:30:00'),
-    	(3, '2023-09-19 16:30:00');
+	(3, '2023-09-18 13:30:00'),
+	(4, '2023-09-18 13:30:00'),
+	(5, '2023-09-18 13:30:00'),
+	(6, '2023-09-19 17:30:00');
 select * from maneja_fin;
 
 INSERT INTO carga_bulto (id_bulto, fecha_inicio, id_vehiculo)
@@ -231,7 +237,7 @@ select * from carga_bulto_fin;
 INSERT INTO carga_paquete (id_paquete, fecha_inicio, id_vehiculo)
 VALUES
 	(1,'2023-09-13 12:20:00',4),
-    (2,'2023-09-15 12:20:00',5),
+    	(2,'2023-09-15 12:20:00',5),
 	(3,'2023-09-12 18:20:00',6);
 select * from carga_paquete;
 
