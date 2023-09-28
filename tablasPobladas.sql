@@ -245,7 +245,7 @@ INSERT INTO carga_paquete_fin (id, fecha_fin)
 VALUES	
 	(1, '2023-09-13 14:25:00'),
     (2, '2023-09-15 13:25:00'),
-    (2, '2023-09-17 20:25:00');
+    (3, '2023-09-17 20:25:00');
 select * from carga_paquete_fin;
 
 ###fin poblado de tablas###
