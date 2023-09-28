@@ -1,6 +1,6 @@
-drop database ejemplo;
-create database ejemplo;
-use ejemplo;
+drop database if exists carpifast;
+create database carpifast;
+use carpifast;
 /* las ID son porque laravel pide que sean asi*/
 create table usuario(
 id bigint unsigned auto_increment not null,
