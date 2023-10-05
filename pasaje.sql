@@ -63,7 +63,7 @@ id_usuario bigint unsigned not null,
 fecha_inicio timestamp not null,
 id_almacen bigint unsigned not null,
 primary key (id),
-UNIQUE (id_usuario, fecha_inicio),
+UNIQUE (id_usuario, fecha_inicio), -- por laravel
 FOREIGN KEY (id_usuario) REFERENCES almacenero(id),
 FOREIGN KEY (id_almacen) REFERENCES almacen(id)
 );
