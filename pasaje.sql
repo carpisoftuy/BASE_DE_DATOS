@@ -43,8 +43,8 @@ create table ubicacion(
 id bigint unsigned auto_increment not null,
 direccion varchar(256) not null,
 codigo_postal varchar(8) not null,
-latitud decimal(10,8) not null,
-longitud decimal(10,8) not null,
+latitud decimal(11,8) not null,
+longitud decimal(11,8) not null,
 primary key (id)
 );
 
