@@ -12,15 +12,6 @@ primary key (id),
 UNIQUE (username)
 );
 
-create table informacion(
-id bigint unsigned auto_increment not null,
-id_usuario bigint unsigned not null,
-tipo varchar(16) not null,
-detalle varchar(256) not null,
-primary key (id),
-FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE
-);
-
 create table administrador(
 id bigint unsigned not null,
 primary key (id),
@@ -55,24 +46,6 @@ espacio_ocupado int not null,
 id_ubicacion bigint unsigned not null,
 primary key (id),
 FOREIGN KEY (id_ubicacion) REFERENCES ubicacion(id) ON DELETE CASCADE
-);
-
-create table gestiona(
-id bigint unsigned auto_increment not null,
-id_usuario bigint unsigned not null,
-fecha_inicio timestamp not null,
-id_almacen bigint unsigned not null,
-primary key (id),
-UNIQUE (id_usuario, fecha_inicio), -- por laravel
-FOREIGN KEY (id_usuario) REFERENCES almacenero(id) ON DELETE CASCADE, 
-FOREIGN KEY (id_almacen) REFERENCES almacen(id) ON DELETE CASCADE
-);
-
-create table gestiona_fin(
-id bigint unsigned not null,
-fecha_fin timestamp not null,
-primary key (id),
-FOREIGN KEY (id) REFERENCES gestiona(id) ON DELETE CASCADE
 );
 
 create table bulto(
