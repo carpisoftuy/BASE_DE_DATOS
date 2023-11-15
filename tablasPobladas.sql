@@ -3,9 +3,9 @@
 INSERT INTO usuario (username, password, nombre, apellido)
 VALUES
   ('ggMartinez', '$2a$12$imtAiqhO5lLp2blqxQTl.OHukQ3zQXvc00kv3tiiNixilMgr5UKL2', 'Gonzalo', 'Martinez'),
-  ('nnunez', PASSWORD('nestor'), 'Nestor', 'Nuñez'),
-  ('fedenimas', PASSWORD('pasta4life'), 'Federico Nimas', 'De León'),
-  ('mate', PASSWORD('malcebado'), 'Mateo', 'Apellido');
+  ('nnunez', '$2a$12$StjzKKZpb7L4fq5rq/GcyefXDM2Ov9fSdtZ8OgmIPx2wE/mpZc216', 'Nestor', 'Nuñez'),
+  ('fedenimas', ' $2a$12$sEhSj3fKlT6gOXkit0FLMu9KHKFTWcun3WIu94W8BsbR7.zyL7J.i ', 'Federico Nimas', 'De León'),
+  ('mate', '$2a$12$/dJseCJdD.DEPwcZehKJvexWHw2hMIRYxX8EiCC1Ele0CzU3uUtxy', 'Mateo', 'Apellido');
 select * from usuario;
 
 INSERT INTO administrador (id)
