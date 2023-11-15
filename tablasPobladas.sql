@@ -2,10 +2,10 @@
 
 INSERT INTO usuario (username, password, nombre, apellido)
 VALUES
-  ('ggMartinez', password_hash('ggMartinez'), 'Gonzalo', 'Martinez'),
-  ('nnunez', password_hash('nestor'), 'Nestor', 'Nuñez'),
-  ('fedenimas', password_hash('pasta4life'), 'Federico Nimas', 'De León'),
-  ('mate', password_hash('malcebado'), 'Mateo', 'Apellido');
+  ('ggMartinez', PASSWORD('ggMartinez'), 'Gonzalo', 'Martinez'),
+  ('nnunez', PASSWORD('nestor'), 'Nestor', 'Nuñez'),
+  ('fedenimas', PASSWORD('pasta4life'), 'Federico Nimas', 'De León'),
+  ('mate', PASSWORD('malcebado'), 'Mateo', 'Apellido');
 select * from usuario;
 
 INSERT INTO administrador (id)
