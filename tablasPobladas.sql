@@ -2,19 +2,11 @@
 
 INSERT INTO usuario (username, password, nombre, apellido)
 VALUES
-  ('sosam', '1234567', 'Martín', 'Sosa'),
-  ('manu', '123567', 'Manuel', 'Rodriguez'),
-  ('dino', 'eldino', 'Sandino', 'López'),
-  ('leborges', 'flash123', 'Bruno', 'Borges');
+  ('ggMartinez', 'ggMartinez', 'Gonzalo', 'Martinez'),
+  ('nnunez', 'nestor', 'Nestor', 'Nuñez'),
+  ('fedenimas', 'pasta4life', 'Federico Nimas', 'De León'),
+  ('mate', 'malcebado', 'Mateo', 'Apellido');
 select * from usuario;
-
-INSERT INTO informacion (id_usuario, tipo, detalle)
-VALUES
-	(1, 'email', 'sosam1763@gmail.com'),
-    (2, 'telefono', '2230056'),
-    (3, 'email', 'uri.sandi.maxi@gmail.com'),
-    (4, 'telefono', '2335345');
-select * from informacion;
 
 INSERT INTO administrador (id)
 VALUES
@@ -23,12 +15,14 @@ select * from administrador;
 
 INSERT INTO chofer (id)
 VALUES
-	(2);
+	(2),
+	(1);
 select * from chofer;
 
 INSERT INTO almacenero (id)
 VALUES
 	(3),
+	(1),
 	(4);
 select * from almacenero;
 
@@ -50,27 +44,6 @@ VALUES
 	(10000, 6500, 3);
 
 select * from almacen;
-
-
-INSERT INTO gestiona (id_usuario, fecha_inicio, id_almacen)
-VALUES
-  (3, '2023-04-15 10:00:00', 1),
-  (4, '2023-05-20 14:30:00', 2),
-  (3, '2023-06-10 09:15:00', 3),
-  (4, '2023-07-05 16:45:00', 1),
-  (3, '2023-08-12 11:20:00', 2);
-
-select * from gestiona;
-
-INSERT INTO gestiona_fin (id, fecha_fin)
-VALUES
-  (1, '2023-04-16 10:20:00'),
-  (2, '2023-05-21 14:10:00'),
-  (3, '2023-06-11 09:35:00'),
-  (4, '2023-07-06 17:00:00'),
-  (5, '2023-08-13 11:40:00');
-  
-select * from gestiona_fin;
 
 INSERT INTO bulto (fecha_armado, volumen, peso, almacen_destino)
 VALUES
