@@ -2,7 +2,7 @@
 
 INSERT INTO usuario (username, password, nombre, apellido)
 VALUES
-  ('ggMartinez', PASSWORD('ggMartinez'), 'Gonzalo', 'Martinez'),
+  ('ggMartinez', '$2a$12$imtAiqhO5lLp2blqxQTl.OHukQ3zQXvc00kv3tiiNixilMgr5UKL2', 'Gonzalo', 'Martinez'),
   ('nnunez', PASSWORD('nestor'), 'Nestor', 'Nuñez'),
   ('fedenimas', PASSWORD('pasta4life'), 'Federico Nimas', 'De León'),
   ('mate', PASSWORD('malcebado'), 'Mateo', 'Apellido');
