@@ -3,7 +3,7 @@
 INSERT INTO usuario (username, password, nombre, apellido)
 VALUES
   ('ggMartinez', password_hash('ggMartinez'), 'Gonzalo', 'Martinez'),
-  ('nnunez', password_hash('nestor', 'Nestor'), 'Nuñez'),
+  ('nnunez', password_hash('nestor'), 'Nestor', 'Nuñez'),
   ('fedenimas', password_hash('pasta4life'), 'Federico Nimas', 'De León'),
   ('mate', password_hash('malcebado'), 'Mateo', 'Apellido');
 select * from usuario;
